@@ -410,12 +410,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .fit-card ul { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
 .fit-card li { font-size: 12.5px; color: var(--ink-2); display: flex; gap: 8px; }
 .fit-card li::before { content: "·"; color: var(--muted-2); }
-.fit-note {
-  margin-top: 18px; font-size: 12.5px; color: var(--muted);
-  display: flex; gap: 10px; align-items: flex-start; padding: 14px 18px;
-  background: var(--gold-soft); border-radius: var(--radius-sm); border: 1px solid rgba(var(--accent3-rgb), 0.28);
-}
-.fit-note strong { color: var(--ink); }
 
 /* ---------- 流程 ---------- */
 .flow { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
@@ -1592,6 +1586,7 @@ p:has(> small), p small, li small { font-size: 13px; }
   letter-spacing: -0.02em;
   line-height: 1.25;
 }
+#exclusive .section-title { text-align: left; }
 
 /* card-container 三列网格 */
 .card-container {
@@ -1981,7 +1976,7 @@ details.faq:hover {
 .op-value p em { font-style: normal; font-weight: 700; color: var(--accent-dark); }
 
 /* 第二部分：价值卡片 */
-.op-help { margin-top: 72px; text-align: center; }
+.op-help { margin-top: 72px; text-align: left; }
 .op-help h2 {
   font-family: var(--font-display);
   font-size: clamp(26px, 3vw, 36px);
@@ -2084,6 +2079,9 @@ details.faq:hover {
   .op-benefit { padding: 24px 20px; }
   .op-head h2 { font-size: 26px; }
 }
+
+/* 首页 Hero 标题：两行固定文案，单独控制字号避免折行 */
+.hero h1.hero__title--channel { font-size: clamp(30px, 3.6vw, 46px) !important; line-height: 1.25; }
 
 /* ---------- 动效降级 ---------- */
 @media (prefers-reduced-motion: reduce) {
