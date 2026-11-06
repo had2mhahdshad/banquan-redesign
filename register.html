@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>版权登记 · 登记前须知与下单</title>
+<meta name="description" content="版权登记流程原型：先阅读须知、填写基础信息，再支付，支付后进入资料任务中心。">
+<link rel="stylesheet" href="assets/styles.css?v=114">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="funnel-page">
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="funnel-top">
+  <div class="wrap funnel-top__inner">
+    <a class="brand" href="index.html" aria-label="返回版权登记服务介绍">
+      <span class="brand__mark" aria-hidden="true">版</span>
+      <span class="brand__text">
+        <strong>版权登记申请</strong>
+        <span>COPYRIGHT REGISTRATION</span>
+      </span>
+    </a>
+
+    <div class="funnel-top__order">
+      演示订单 <strong>OR-2026-1102</strong>
+      <span style="color:var(--green)">· 未扣款</span>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap" data-funnel>
+
+  <nav class="stepper" aria-label="登记步骤">
+    <div class="stepper__item is-active" data-step="1">
+      <span class="stepper__num">1</span><span class="stepper__label">必读确认</span>
+    </div>
+    <span class="stepper__line" aria-hidden="true"></span>
+    <div class="stepper__item" data-step="2">
+      <span class="stepper__num">2</span><span class="stepper__label">基础信息</span>
+    </div>
+    <span class="stepper__line" aria-hidden="true"></span>
+    <div class="stepper__item" data-step="3">
+      <span class="stepper__num">3</span><span class="stepper__label">支付</span>
+    </div>
+    <span class="stepper__line" aria-hidden="true"></span>
+    <div class="stepper__item" data-step="4">
+      <span class="stepper__num">4</span><span class="stepper__label">完善资料</span>
+    </div>
+  </nav>
+
+  <div class="funnel-shell">
+
+    <div class="funnel-main">
+
+      <!-- ============ Step 1 必读 ============ -->
+      <section class="funnel-step is-active" data-panel="1">
+        <div class="step-head">
+          <p class="eyebrow">登记前必读</p>
+          <h1>登记前先了解规则</h1>
+          <p>请阅读并确认价格、办理周期、退款条件和作品要求，再填写基础信息并付款。</p>
+        </div>
+
+        <div class="notice-tabs" aria-label="登记规则分类">
+          <button class="notice-tab is-active" type="button" data-notice-tab aria-pressed="true" aria-controls="notice-1">01 费用</button>
+          <button class="notice-tab" type="button" data-notice-tab aria-pressed="false" aria-controls="notice-2">02 周期</button>
+          <button class="notice-tab" type="button" data-notice-tab aria-pressed="false" aria-controls="notice-3">03 退款</button>
+          <button class="notice-tab" type="button" data-notice-tab aria-pressed="false" aria-controls="notice-4">04 作品要求</button>
+        </div>
+
+        <div class="notice-list">
+          <article class="notice is-current" id="notice-1">
+            <div class="notice__top">
+              <span class="notice__num" aria-hidden="true">01</span>
+              <div>
+                <h3>费用与包含内容</h3>
+                <p>登记服务费为 ¥69.9 / 件，费用包含材料初审、代提交和电子证书；不含加急。</p>
+              </div>
+            </div>
+            <div class="notice__body">
+              <ul>
+                <li>服务费 <span class="key">¥69.9 / 件</span>，按件计费。</li>
+                <li>平面类作品只提交 <span class="key">1 张图片</span>，请将原创设计内容拼合到同一张图中。</li>
+                <li>费用包含：材料初审、代提交、电子证书；<span class="key">不含加急</span>。</li>
+              </ul>
+            </div>
+            <label class="notice__check">
+              <input class="notice-input" type="checkbox">
+              <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              我已完整阅读费用与服务范围
+            </label>
+          </article>
+
+          <article class="notice" id="notice-2" hidden>
+            <div class="notice__top">
+              <span class="notice__num" aria-hidden="true">02</span>
+              <div>
+                <h3>审核周期与发证</h3>
+                <p>整体办理周期为 <strong>10–15 个工作日</strong>。请在作品提交截止日期前预留登记办理时间。</p>
+              </div>
+            </div>
+            <div class="notice__body">
+              <ul>
+                <li>请根据赛事作品提交截止日期，预留 <span class="key">10–15 个工作日</span>办理。</li>
+                <li>证书下发后，登记信息会在全国作品登记信息数据库 <span class="key">公开可查</span>。</li>
+              </ul>
+            </div>
+            <label class="notice__check">
+              <input class="notice-input" type="checkbox">
+              <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              我已完整阅读办理周期与截稿时间提示
+            </label>
+          </article>
+
+          <article class="notice" id="notice-3" hidden>
+            <div class="notice__top">
+              <span class="notice__num" aria-hidden="true">03</span>
+              <div>
+                <h3>退款规则</h3>
+                <p>退款条件按资料是否已提交版权局，以及驳回原因确定。</p>
+              </div>
+            </div>
+            <div class="notice__body">
+              <ul>
+                <li><span class="key">未提交版权局：</span>可申请退款。</li>
+                <li><span class="warn">已提交版权局：</span>如版权局驳回，可申请退款；因抄袭被驳回的除外。</li>
+                <li>版权局审核通过：不适用驳回退款规则。</li>
+              </ul>
+            </div>
+            <label class="notice__check">
+              <input class="notice-input" type="checkbox">
+              <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              我已完整阅读退款条件
+            </label>
+          </article>
+
+          <article class="notice" id="notice-4" hidden>
+            <div class="notice__top">
+              <span class="notice__num" aria-hidden="true">04</span>
+              <div>
+                <h3>作品与作者要求</h3>
+                <p>请确认作品内容符合登记要求，并准备好相应授权材料。</p>
+              </div>
+            </div>
+            <div class="notice__body">
+              <ul>
+                <li>登记版只保留本人 <span class="key">100% 原创</span>的设计内容，所有非原创内容均需去除。作品名称不得出现品牌名称；画面中的命题企业或大广赛 LOGO、产品图、名称及品牌 IP 特征均需去除。</li>
+                <li>请去除二维码、条形码、实际地址和电话，以及作品画面中的作者、指导教师和学校信息。申请资料仍需填写真实作者信息。</li>
+                <li>真人肖像需提供所有出镜人的授权，包括作者本人。AI 生成的人物肖像需打码。</li>
+                <li>背景音乐需提供授权；建议移除。字体、插画等第三方素材请提供相应授权材料。</li>
+                <li>创作协议、授权书须早于作品创作时间签署；请核对日期。</li>
+              </ul>
+            </div>
+            <label class="notice__check">
+              <input class="notice-input" type="checkbox">
+              <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              我已阅读并知晓作品要求
+            </label>
+          </article>
+        </div>
+
+        <div class="read-progress">
+          <span class="read-progress__text">0 / 4 条已阅读</span>
+          <span class="read-progress__bar"><i></i></span>
+        </div>
+
+        <button class="btn btn--primary btn--block btn--lg" id="toStep2" type="button" disabled>
+          下一步：填写基础信息
+        </button>
+        <p style="font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px">
+          为避免遗漏，请阅读每一项说明后再勾选确认。
+        </p>
+
+        <div class="prep-mini">
+          <h4>开始前，手边准备好这些</h4>
+          <ul>
+            <li><span class="dot"></span>实名认证所需证件信息</li>
+            <li><span class="dot"></span>原创设计内容已整理的作品文件</li>
+            <li><span class="dot"></span>授权书或创作协议（如涉及）</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ Step 2 基础信息 ============ -->
+      <section class="funnel-step" data-panel="2">
+        <div class="step-head">
+          <p class="eyebrow">填写基础信息</p>
+          <h1>先填 4 项基础信息</h1>
+          <p>这些信息用于创建订单、审核通知和退款联系，请确认填写准确。</p>
+        </div>
+
+        <form class="form-card" id="basicForm" novalidate>
+          <div class="form-grid">
+            <div class="field field--full">
+              <label for="workName">作品名称 <span class="req">*</span></label>
+              <input class="input" id="workName" name="workName" type="text" maxlength="40" placeholder="例如：轻盈一夏" autocomplete="off">
+              <span class="hint">作品名称不得出现品牌名称；可与参赛作品名称不同。</span>
+              <span class="field-error" data-error-for="workName"></span>
+            </div>
+
+            <div class="field field--full" id="typeBlock">
+              <label>作品类型 <span class="req">*</span></label>
+              <div class="type-grid">
+                <button class="type-chip" type="button" data-type="平面类">平面类</button>
+                <button class="type-chip" type="button" data-type="视频类">视频类</button>
+                <button class="type-chip" type="button" data-type="动画类">动画类</button>
+                <button class="type-chip" type="button" data-type="UI 类">UI 类</button>
+                <button class="type-chip" type="button" data-type="互动类（静态）">互动类（静态）</button>
+                <button class="type-chip" type="button" data-type="互动类（动态）">互动类（动态）</button>
+                <button class="type-chip" type="button" data-type="科技类（静态）">科技类（静态）</button>
+                <button class="type-chip" type="button" data-type="科技类（动态）">科技类（动态）</button>
+                <button class="type-chip" type="button" data-type="营销创客类（微视频）">营销创客类（微视频）</button>
+                <button class="type-chip" type="button" data-type="文案类（长文案）">文案类（长文案）</button>
+                <button class="type-chip" type="button" data-type="文案类（创意脚本）">文案类（创意脚本）</button>
+              </div>
+              <span class="hint">完整类别和格式要求见介绍页。</span>
+            </div>
+
+            <div class="field">
+              <label for="region">参赛赛区 <span class="req">*</span></label>
+              <select class="select" id="region">
+                <option value="">请选择赛区</option>
+                <option>北京赛区</option><option>天津赛区</option><option>河北赛区</option><option>山西赛区</option>
+                <option>内蒙古赛区</option><option>辽宁赛区</option><option>吉林赛区</option><option>黑龙江赛区</option>
+                <option>上海赛区</option><option>江苏赛区</option><option>浙江赛区</option><option>安徽赛区</option>
+                <option>福建赛区</option><option>江西赛区</option><option>山东赛区</option><option>河南赛区</option>
+                <option>湖北赛区</option><option>湖南赛区</option><option>广东赛区</option><option>广西赛区</option>
+                <option>海南赛区</option><option>重庆赛区</option><option>四川赛区</option><option>贵州赛区</option>
+                <option>云南赛区</option><option>西藏赛区</option><option>陕西赛区</option><option>甘肃赛区</option>
+                <option>青海赛区</option><option>宁夏赛区</option><option>新疆赛区</option>
+              </select>
+              <span class="field-error" data-error-for="region"></span>
+            </div>
+
+            <div class="field">
+              <label for="school">院校名称 <span class="req">*</span></label>
+              <input class="input" id="school" type="text" placeholder="例如：中国美术学院" autocomplete="organization">
+              <span class="field-error" data-error-for="school"></span>
+            </div>
+
+            <div class="field field--full">
+              <label for="phone">联系手机号 <span class="req">*</span></label>
+              <div class="with-suffix">
+                <input class="input" id="phone" type="tel" inputmode="numeric" placeholder="用于审核通知与退款联系" autocomplete="tel">
+                <button class="btn btn--ghost btn--sm suffix-btn" id="wechatFill" type="button">使用微信手机号</button>
+              </div>
+              <span class="hint">订单页脱敏显示，不进公开登记信息。</span>
+              <span class="field-error" data-error-for="phone"></span>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center;margin-top:24px;flex-wrap:wrap">
+            <button class="btn btn--primary btn--lg" type="submit" style="margin-left:auto">
+              下一步：支付 ¥69.9
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============ Step 3 支付 ============ -->
+      <section class="funnel-step" data-panel="3">
+        <div class="step-head">
+          <p class="eyebrow">确认订单</p>
+          <h1>确认订单并继续</h1>
+          <p>完成支付后，按提示进行实名认证、完善作品资料并提交审核。</p>
+        </div>
+
+        <div class="pay-card__left">
+          <div class="pay-card">
+            <div class="pay-card__sum">
+              <div class="summary-row"><span>作品名称</span><strong id="payWork">待填写</strong></div>
+              <div class="summary-row"><span>作品类型</span><strong id="payType">待选择</strong></div>
+              <div class="summary-row"><span>参赛赛区</span><strong id="payRegion">待选择</strong></div>
+              <div class="summary-row"><span>联系手机</span><strong id="payPhone">待填写</strong></div>
+              <div class="summary-row"><span>服务费</span><strong>¥69.90</strong></div>
+            </div>
+
+            <section class="pay-confirm" aria-labelledby="payConfirmTitle">
+              <h2 id="payConfirmTitle">付款前完整确认</h2>
+              <ul>
+                <li><strong>服务费：</strong>¥69.9 / 件，包含材料初审、代提交和电子证书，不含加急。</li>
+                <li><strong>办理周期：</strong>10–15 个工作日，请在作品提交截止日期前预留时间。</li>
+                <li><strong>退款规则：</strong>提交至版权局前可申请退款；提交后仅在版权局驳回后可申请退款，因抄袭被驳回的除外。</li>
+                <li><strong>作品要求：</strong>登记版仅保留本人原创内容。平面类只提交 1 张图片，请将原创设计内容拼合到同一张图中；品牌及赛事元素、联系方式、作者/教师/学校标识等非原创信息需去除，并按要求准备肖像与素材授权。</li>
+              </ul>
+              <label class="notice__check">
+                <input id="payConfirm" type="checkbox">
+                <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+                我已核对订单信息，并确认已阅读以上服务规则
+              </label>
+            </section>
+          </div>
+        </div>
+
+        <aside class="pay-card__right">
+          <div class="pay-qr">
+            <div class="qr-box" id="demoQr"></div>
+            <p>微信扫码支付 · 原型演示二维码</p>
+          </div>
+
+          <div class="pay-methods">
+            <button class="pay-method is-active" type="button"><i></i>微信支付</button>
+            <button class="pay-method" type="button"><i></i>支付宝</button>
+          </div>
+
+          <div class="pay-safe">
+            <strong>继续前请再次确认：</strong>
+            支付后请尽快完成实名认证与作品资料提交。提交至版权局前可申请退款；提交后仅在版权局驳回时可申请退款，因抄袭被驳回的除外。
+          </div>
+
+          <button class="btn btn--primary btn--block btn--lg" id="simulatePay" type="button" disabled style="margin-top:18px">
+            模拟支付成功（原型演示，不会扣款）
+          </button>
+          <p class="demo-note">这是前端原型，不会产生真实订单或扣款。</p>
+        </aside>
+      </section>
+
+      <!-- ============ Step 4 任务中心 ============ -->
+      <section class="funnel-step" data-panel="4" id="tasks">
+        <div class="success-hero">
+          <div class="success-hero__check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h2>支付后，还需完成 3 项资料任务</h2>
+          <p>基础信息已填写并完成付款。请继续实名认证并提交作品资料。</p>
+          <div class="success-hero__meta">
+            <span class="meta-chip"><strong id="tcWork">《轻盈一夏》 · 北京赛区 · 平面类</strong></span>
+            <span class="meta-chip">联系手机 <strong id="tcPhone">138 **** 8000</strong></span>
+            <span class="meta-chip">建议完成时间 <strong id="tcDeadline">2026 年 11 月 9 日</strong></span>
+          </div>
+        </div>
+
+        <div class="task-list">
+          <article class="task" id="taskRealname">
+            <div class="task__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.5 16c.9-1.6 2.1-2.4 3.5-2.4s2.6.8 3.5 2.4M15 9h4M15 13h4"/></svg>
+            </div>
+            <div class="task__body">
+              <h3>1. 实名认证 <span class="pill pill--amber">前置条件</span></h3>
+              <p>身份证正反面 + 手写签名。每个作者都要做，已认证身份可以直接选。</p>
+            </div>
+            <div class="task__action">
+              <button class="btn btn--primary btn--sm" type="button" data-realname>去实名认证</button>
+            </div>
+          </article>
+
+          <article class="task" id="taskForm">
+            <div class="task__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3h9l5 5v13H5z"/><path d="M14 3v5h5M8 12h7M8 16h5"/></svg>
+            </div>
+            <div class="task__body">
+              <h3>2. 完善作品资料</h3>
+              <p>作品文件、原创说明、作者和权属信息。提交前会先做 5 项自检。</p>
+            </div>
+            <div class="task__action">
+              <a class="btn btn--primary btn--sm" href="form.html">去填写</a>
+            </div>
+          </article>
+
+          <article class="task" id="taskSubmit">
+            <div class="task__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div class="task__body">
+              <h3>3. 提交审核</h3>
+              <p>前两项做完才能进。提交后平台先初审，再交给省版权局。</p>
+            </div>
+            <div class="task__action">
+              <span class="pill pill--amber">待前置任务完成</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="order-timeline">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px">
+            <h3 style="margin:0">订单进度</h3>
+            <span style="font-size:11.5px;color:var(--muted)" id="tcProgressText">0 / 3 项已完成</span>
+          </div>
+          <div class="read-progress__bar" style="margin-bottom:18px"><i id="tcProgressBar" style="width:0"></i></div>
+          <div class="timeline">
+            <div class="tl-item is-done">
+              <span class="tl-dot">✓</span>
+              <div class="tl-body"><b>支付服务费</b><span>已完成 · ¥69.90</span></div>
+            </div>
+            <div class="tl-item is-current">
+              <span class="tl-dot">2</span>
+              <div class="tl-body"><b>实名认证与资料完善</b><span>进行中 · 建议 7 天内完成</span></div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot">3</span>
+              <div class="tl-body"><b>平台初审并提交版权局</b><span>办理流程中的平台审核阶段</span></div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot">4</span>
+              <div class="tl-body"><b>省版权局审核与发证</b><span>10–15 个工作日</span></div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot">5</span>
+              <div class="tl-body"><b>证书下发与公示</b><span>可在全国作品登记信息数据库查询</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-card__note" style="margin-top:16px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          提交至版权局前可申请退款；提交后仅在版权局驳回时可申请退款，因抄袭被驳回的除外。
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ 右侧摘要 ============ -->
+    <aside class="summary-card">
+      <p class="summary-card__label">本次登记</p>
+      <div class="summary-card__price"><b><small>¥</small>69.9</b><s>¥300</s><span style="font-size:11px;color:var(--muted)">/ 件</span></div>
+      <div class="summary-card__rows">
+        <div class="summary-row"><span>作品</span><strong id="sumWork">待填写</strong></div>
+        <div class="summary-row"><span>类型</span><strong id="sumType">待选择</strong></div>
+        <div class="summary-row"><span>赛区</span><strong id="sumRegion">待选择</strong></div>
+        <div class="summary-row"><span>联系手机</span><strong id="sumPhone">待填写</strong></div>
+      </div>
+      <div class="summary-card__note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7l8-4z"/></svg>
+        <span>提交至版权局前可申请退款；提交后仅在版权局驳回时可申请退款，抄袭驳回除外。</span>
+      </div>
+      <p class="summary-card__micro">原型演示 · 不会真实扣款</p>
+    </aside>
+  </div>
+</main>
+
+<!-- ============ 实名认证弹窗 ============ -->
+<dialog class="modal" id="realnameDialog">
+  <div class="modal__head">
+    <div>
+      <h2>实名认证</h2>
+      <p>按顺序点完 3 步即可完成（原型演示，不会上传真实证件）。</p>
+    </div>
+    <button class="modal__close" id="rnClose" type="button" aria-label="关闭">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="modal__body">
+    <div class="realname-steps">
+      <div class="rn-step" role="button" tabindex="0">
+        <span class="rn-step__num">1</span>
+        <div><h4>上传身份证正面</h4><p>确保边框完整、文字清晰。点击本行模拟上传。</p></div>
+      </div>
+      <div class="rn-step" role="button" tabindex="0">
+        <span class="rn-step__num">2</span>
+        <div><h4>上传身份证反面</h4><p>系统会自动 OCR 识别并加水印。点击本行模拟上传。</p></div>
+      </div>
+      <div class="rn-step" role="button" tabindex="0">
+        <span class="rn-step__num">3</span>
+        <div><h4>手写签名</h4><p>在签名区内签写本人姓名。点击本行模拟完成。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal__foot">
+    <button class="btn btn--ghost" type="button" onclick="this.closest('dialog').close()">稍后再说</button>
+    <button class="btn btn--primary" id="rnDone" type="button" disabled>完成实名认证</button>
+  </div>
+</dialog>
+
+<script src="assets/app.js?v=114"></script>
+</body>
+</html>

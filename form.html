@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>填写作品登记资料</title>
+<meta name="description" content="版权登记资料填写页原型：实名信息复用、作品自检、错误汇总与提交复核。">
+<link rel="stylesheet" href="assets/styles.css?v=114">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="form-page">
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="form-top">
+  <div class="wrap form-top__inner">
+    <a class="brand" href="index.html" aria-label="返回版权登记服务介绍">
+      <span class="brand__mark" aria-hidden="true">版</span>
+      <span class="brand__text">
+        <strong>完善登记资料</strong>
+        <span>REGISTRATION DETAILS</span>
+      </span>
+    </a>
+    <a class="funnel-top__back" href="register.html#tasks">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      返回任务中心
+    </a>
+    <div class="form-top__order">
+      <strong>《<span id="orderWork">轻盈一夏</span>》 · <span id="formTypeLabel">平面类</span></strong>
+      演示订单 OR-2026-1102 · 状态示意
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap form-shell" data-form-page>
+
+  <aside class="form-nav" aria-label="资料章节">
+    <h4>资料章节</h4>
+    <a href="#basic" class="is-active">01 作品信息</a>
+    <a href="#authors">02 作者信息</a>
+    <a href="#rights">03 权属与权利</a>
+    <a href="#review">04 提交前复核</a>
+    <div class="form-nav__progress">
+      <b>4 个章节</b>
+      依次完成资料填写与提交前复核。
+    </div>
+  </aside>
+
+  <div class="form-main">
+
+    <div class="error-summary" id="errorSummary" role="alert" aria-live="polite"></div>
+
+    <!-- 作品信息 -->
+    <section class="form-block" id="basic">
+      <div class="form-block__head">
+        <span class="pill pill--amber">第 1 步 / 共 3 步</span>
+        <h2>作品信息</h2>
+        <p>先选择作品类型并查看对应材料要求，再上传处理后的登记版作品文件。</p>
+      </div>
+
+      <div class="field" id="typeBlock" style="margin-bottom:18px">
+        <label>作品类型 <span class="req">*</span></label>
+        <div class="type-grid">
+          <button class="type-chip" type="button" data-type="平面类">平面类</button>
+          <button class="type-chip" type="button" data-type="视频类">视频类</button>
+          <button class="type-chip" type="button" data-type="动画类">动画类</button>
+          <button class="type-chip" type="button" data-type="UI 类">UI 类</button>
+          <button class="type-chip" type="button" data-type="互动类（静态）">互动类（静态）</button>
+          <button class="type-chip" type="button" data-type="互动类（动态）">互动类（动态）</button>
+          <button class="type-chip" type="button" data-type="科技类（静态）">科技类（静态）</button>
+          <button class="type-chip" type="button" data-type="营销创客类（微视频）">营销创客类（微视频）</button>
+          <button class="type-chip" type="button" data-type="文案类（长文案）">文案类（长文案）</button>
+          <button class="type-chip" type="button" data-type="文案类（创意脚本）">文案类（创意脚本）</button>
+        </div>
+      </div>
+
+      <div class="rules-box">
+        <h4>上传前，请确认作品已处理成“登记版”</h4>
+        <p>登记版只保留本人 <strong>100% 原创</strong>的设计内容；所有非原创内容都需要去掉。</p>
+        <ol>
+          <li>作品名称不得出现品牌名称；画面中的命题企业或大广赛 LOGO、产品图、名称及品牌 IP 特征都需去除。</li>
+          <li>去除二维码、条形码、实际地址和电话，以及作品画面中的作者、指导教师和学校信息。申请资料中的作者信息仍需如实填写。</li>
+          <li>所有真人出镜者均需提供肖像授权，包括作者本人。AI 生成的人物肖像需打码。</li>
+          <li>背景音乐需提供素材授权；建议移除背景音乐。字体、插画等第三方素材需提供相应授权材料。</li>
+          <li>创作协议或授权书的签署时间须早于作品创作时间。</li>
+        </ol>
+        <p class="rules-box__analogy">可以把登记理解为给自己的房子办理权属登记：不属于自己的部分，不放进登记版。</p>
+      </div>
+
+      <div class="upload" id="uploadBox" role="button" tabindex="0" aria-label="选择作品文件">
+        <div class="upload__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3h16v-3"/></svg>
+        </div>
+        <h4>点击或拖拽作品文件到此处上传</h4>
+        <p id="uploadHint">选择作品类型后显示对应文件要求。</p>
+        <p class="upload__demo-note">交互演示：文件仅在当前页面本地选择，不会上传到服务器。</p>
+        <input id="workFiles" class="visually-hidden" type="file" aria-label="选择作品文件">
+        <p style="margin-top:6px;color:var(--accent)" id="uploadCount" aria-live="polite">文件 0/5</p>
+        <div class="upload__files" id="fileList" aria-live="polite"></div>
+      </div>
+
+      <div class="form-grid" style="margin-top:22px">
+        <div class="field field--full">
+          <label for="workName">作品名称 <span class="req">*</span></label>
+          <input class="input" id="workName" type="text" maxlength="40" placeholder="填写拟登记的作品名称">
+          <span class="hint">作品名称不得出现品牌名称；可以与参赛作品名称不同。</span>
+        </div>
+        <div class="field">
+          <label for="creationDate">作品创作时间 <span class="req">*</span></label>
+          <input class="input" id="creationDate" type="date">
+          <span class="hint">作品创作时间须晚于创作协议或授权书的签署时间（如涉及）。</span>
+        </div>
+        <div class="field">
+          <label for="creationPlace">作品创作地点</label>
+          <select class="select" id="creationPlace">
+            <option value="">请选择省份</option>
+            <option>北京市</option><option>天津市</option><option>河北省</option><option>山西省</option>
+            <option>内蒙古自治区</option><option>辽宁省</option><option>吉林省</option><option>黑龙江省</option>
+            <option>上海市</option><option>江苏省</option><option>浙江省</option><option>安徽省</option>
+            <option>福建省</option><option>江西省</option><option>山东省</option><option>河南省</option>
+            <option>湖北省</option><option>湖南省</option><option>广东省</option><option>广西壮族自治区</option>
+            <option>海南省</option><option>重庆市</option><option>四川省</option><option>贵州省</option>
+            <option>云南省</option><option>西藏自治区</option><option>陕西省</option><option>甘肃省</option>
+            <option>青海省</option><option>宁夏回族自治区</option><option>新疆维吾尔自治区</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="formRegion">参赛赛区 <span class="req">*</span></label>
+          <select class="select" id="formRegion">
+            <option>北京赛区</option><option>天津赛区</option><option>河北赛区</option><option>山西赛区</option>
+            <option>内蒙古赛区</option><option>辽宁赛区</option><option>吉林赛区</option><option>黑龙江赛区</option>
+            <option>上海赛区</option><option>江苏赛区</option><option>浙江赛区</option><option>安徽赛区</option>
+            <option>福建赛区</option><option>江西赛区</option><option>山东赛区</option><option>河南赛区</option>
+            <option>湖北赛区</option><option>湖南赛区</option><option>广东赛区</option><option>广西赛区</option>
+            <option>海南赛区</option><option>重庆赛区</option><option>四川赛区</option><option>贵州赛区</option>
+            <option>云南赛区</option><option>西藏赛区</option><option>陕西赛区</option><option>甘肃赛区</option>
+            <option>青海赛区</option><option>宁夏赛区</option><option>新疆赛区</option>
+          </select>
+          <span class="hint">登记信息会同步给赛区，作为原创性参考。</span>
+        </div>
+        <div class="field field--full">
+          <label for="opDesc">原创说明 <span class="req">*</span></label>
+          <textarea class="textarea" id="opDesc" maxlength="240" placeholder="描述作品的创作过程、独创点与素材来源；原创说明不填写 AI、企业名称或命题品牌等无关信息。"></textarea>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <button class="btn btn--ghost btn--sm" type="button" data-desc-template="本作品由创作者独立完成，创作过程包括主题构思、草图绘制、版式调整与多轮修改。画面元素均为原创绘制，未使用任何命题企业品牌元素或第三方未授权素材，不包含 AI 生成的真人肖像。">平面类模板</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-desc-template="本作品由创作者独立完成。脚本、分镜与画面均为原创，拍摄与剪辑素材已获得合法授权；成片中已去除品牌 LOGO、赛事标识与二维码，不包含 AI 生成的真人肖像。">视频类模板</button>
+            </div>
+            <span class="counter" id="descCount">0 / 240</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 作者信息 -->
+    <section class="form-block" id="authors">
+      <div class="form-block__head">
+        <span class="pill pill--amber">第 2 步 / 共 3 步</span>
+        <h2>作者及著作权人信息</h2>
+        <p>直接选择已实名认证的身份，不再重复填写姓名与证件号。团队作品最多 5 位作者。</p>
+      </div>
+
+      <div class="identity is-selected" id="identityCard" role="button" aria-pressed="true" tabindex="0">
+        <span class="identity__avatar" aria-hidden="true">高</span>
+        <div class="identity__body">
+          <b>示例作者 <span style="font-size:11px;color:var(--muted);font-weight:400">（第一作者）</span></b>
+          <span>证件信息已脱敏 · 联系方式已脱敏</span>
+        </div>
+        <span class="pill pill--green">已实名认证</span>
+        <input type="checkbox" id="authorSelected" checked hidden>
+      </div>
+      <button class="identity-add" type="button" style="border:0;background:none">+ 添加作者（需先完成该位作者的实名认证）</button>
+
+      <div class="summary-card__note" style="margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span>2–5 位作者按团队作品登记。每位作者均需完成实名认证，完成后可提交审核。</span>
+      </div>
+    </section>
+
+    <!-- 权属与权利 -->
+    <section class="form-block" id="rights">
+      <div class="form-block__head">
+        <span class="pill pill--amber">第 3 步 / 共 3 步</span>
+        <h2>权属与权利确认</h2>
+        <p>如作品出现真人肖像，所有出镜人（包括作者本人）均需提供肖像授权。AI 生成的人物肖像需打码。</p>
+      </div>
+
+      <div class="field" style="margin-bottom:18px">
+        <label>作品是否涉及人物肖像</label>
+        <div class="portrait-opts">
+          <label class="portrait-opt is-selected">
+            <input type="radio" name="portrait" value="no" checked>
+            <span><b>不涉及</b><span>画面中没有可识别的真人形象。</span></span>
+          </label>
+          <label class="portrait-opt">
+            <input type="radio" name="portrait" value="yes">
+            <span><b>涉及</b><span>需提供肖像授权协议，以便提交审核。</span></span>
+          </label>
+        </div>
+      </div>
+
+      <div id="portraitUpload" hidden>
+        <div class="rules-box" style="background:var(--amber-soft);border-color:#ecd7b6">
+          <h4 style="color:var(--amber)">请补充肖像授权协议</h4>
+          <p style="font-size:12.5px;color:#6a5227;margin-top:4px">需由肖像权人签字。可下载模板后上传 PDF / PNG / JPG，支持多页。</p>
+        </div>
+        <div class="upload" style="padding:22px">
+          <h4>上传肖像授权协议</h4>
+          <p>点击或拖拽文件到此处上传</p>
+        </div>
+      </div>
+
+      <div class="field" style="margin:24px 0 18px">
+        <label>权利信息确认</label>
+        <div class="rights-grid">
+          <span class="right-chip is-on"><i></i>发表权</span>
+          <span class="right-chip is-on"><i></i>署名权</span>
+          <span class="right-chip is-on"><i></i>修改权</span>
+          <span class="right-chip is-on"><i></i>保护作品完整权</span>
+          <span class="right-chip is-on"><i></i>复制权</span>
+          <span class="right-chip is-on"><i></i>发行权</span>
+          <span class="right-chip is-on"><i></i>信息网络传播权</span>
+          <span class="right-chip is-on"><i></i>改编权</span>
+          <span class="right-chip"><i></i>翻译权</span>
+          <span class="right-chip"><i></i>汇编权</span>
+        </div>
+        <span class="hint">默认勾选常用权利，可按实际情况调整。</span>
+      </div>
+
+      <label class="agree-box">
+        <input type="checkbox" id="rightsAgree">
+        <span>我已确认上述权利归属真实、准确，并承诺提交登记的作品系本人（团队）合法享有权利的作品，不存在抄袭、剽窃或其他侵犯他人著作权的情形。</span>
+      </label>
+    </section>
+
+    <!-- 复核 -->
+    <section class="form-block" id="review">
+      <div class="form-block__head">
+        <span class="pill pill--green">提交前复核</span>
+        <h2>作品自检清单</h2>
+        <p>请逐项检查作品与授权材料。提交至版权局后不可修改。</p>
+      </div>
+
+      <div class="self-check" id="selfCheckBlock">
+        <label>
+          <input type="checkbox" data-selfcheck>
+          <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+          作品名称不含品牌名，画面已去除品牌/赛事标识、产品图及品牌 IP 特征
+        </label>
+        <label>
+          <input type="checkbox" data-selfcheck>
+          <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+          已去除二维码、条形码、地址、电话及作品画面中的作者/教师/学校信息
+        </label>
+        <label>
+          <input type="checkbox" data-selfcheck>
+          <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+          所有真人肖像（含作者本人）均有授权；AI 生成的人物肖像已打码
+        </label>
+        <label>
+          <input type="checkbox" data-selfcheck>
+          <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+          背景音乐已移除或已取得授权；字体、插画等第三方素材已核对授权
+        </label>
+        <label>
+          <input type="checkbox" data-selfcheck>
+          <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+          创作协议或授权书的签署时间早于作品创作时间（如涉及）
+        </label>
+      </div>
+
+      <div class="summary-card__note" style="margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span>提交至版权局后不可修改；如被版权局驳回，可申请退款，抄袭导致的驳回除外。</span>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="form-actions">
+  <div class="wrap form-actions__inner">
+    <span class="form-actions__save"><i></i><span id="saveStamp">本机草稿尚未保存</span></span>
+    <button class="btn btn--ghost" id="saveDraft" type="button">保存草稿</button>
+    <button class="btn btn--primary btn--lg" id="submitForm" type="button">提交审核</button>
+  </div>
+</div>
+
+<script src="assets/app.js?v=114"></script>
+</body>
+</html>
